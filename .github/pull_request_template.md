@@ -16,7 +16,9 @@
 <!-- What does v1 deliberately not handle? -->
 
 ## Checklist
+- [ ] I searched for existing tools that solve this and documented what I found in the signal's **Gap verification** section in SIGNALS.md
+- [ ] Gap verification section exists in SIGNALS.md for the signal this addresses
 - [ ] Code runs in one command from a clean install
 - [ ] `README.md` updated if needed
-- [ ] `problem.md` included (for new solutions)
+- [ ] `problem.md` included and honest about what already exists (for new solutions)
 - [ ] No hardcoded API keys or secrets

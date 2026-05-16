@@ -79,6 +79,26 @@ def cmd_list(args):
     print()
 
 
+def check_gap_verification(signal_ref: str) -> bool:
+    """Check that SIGNALS.md has a Gap verification section for this signal."""
+    signals_file = Path(__file__).parent / "SIGNALS.md"
+    if not signals_file.exists():
+        return False
+    content = signals_file.read_text()
+    # Find the signal section and check for gap verification
+    signal_section_start = content.find(f"## " )
+    lines = content.split("\n")
+    in_signal = False
+    for i, line in enumerate(lines):
+        if signal_ref in line and line.startswith("##"):
+            in_signal = True
+        if in_signal and line.startswith("## ") and signal_ref not in line:
+            break  # moved past this signal's section
+        if in_signal and "Gap verification" in line:
+            return True
+    return False
+
+
 def cmd_claim(args):
     rows = load()
     latest = get_latest(rows, args.claim)
@@ -87,6 +107,15 @@ def cmd_claim(args):
         sys.exit(1)
     if latest["status"] not in ("open",):
         print(f"Signal {args.claim} is already {latest['status']} — cannot claim.")
+        sys.exit(1)
+
+    # Enforce gap verification before claiming
+    if not check_gap_verification(args.claim):
+        print(f"\n⚠️  Cannot claim {args.claim} — gap verification is missing.")
+        print(f"    SIGNALS.md must have a 'Gap verification' section for {args.claim}")
+        print(f"    documenting what existing tools were found and why the gap is real.")
+        print(f"\n    See CONTRIBUTING.md for the required format.")
+        print(f"    Add the section to SIGNALS.md, then re-run this command.\n")
         sys.exit(1)
 
     new_row = {**latest,
