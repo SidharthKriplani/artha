@@ -21,4 +21,5 @@
 - [ ] Code runs in one command from a clean install
 - [ ] `README.md` updated if needed
 - [ ] `problem.md` included and honest about what already exists (for new solutions)
+- [ ] `scope.md` included — OS, Python version, dependencies, what it handles/doesn't, who it's for
 - [ ] No hardcoded API keys or secrets

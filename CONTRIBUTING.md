@@ -68,6 +68,7 @@ Each solution lives in `solutions/your-solution-name/`.
 Every solution must include:
 - `README.md` — what it does, how to use it, the signal it traces to
 - `problem.md` — the pain, who has it, why existing tools don't solve it
+- `scope.md` — compatibility card: what OS/Python/hardware it works on, what it handles, what it doesn't, known limitations, who it's for
 - Working code with a clear entry point (CLI or Gradio app preferred)
 - `requirements.txt`
 
@@ -75,6 +76,8 @@ Optionally (but strongly encouraged):
 - `prd.md` — what's in scope, what's deliberately excluded
 - `eval_plan.md` — how you know it works
 - `CONTEXT.md` — technical decisions and tradeoffs
+
+**scope.md is mandatory.** A contributor or user landing on your solution needs to know in 30 seconds whether it works for their setup. Don't make them read the whole README to find out it requires a GPU they don't have.
 
 ### 4. Open a PR
 
