@@ -23,7 +23,7 @@ This is what makes ARTHA different from a curated list or an ideas repo. The sig
 ## What's inside
 
 ### 🔴 Open signals — [`SIGNALS.md`](SIGNALS.md)
-7 documented developer pain points, each traced to a real community thread. Three deployed. Four waiting to be built. Read this first.
+7 documented developer pain points, each traced to a real community thread. Four deployed. Three waiting to be built. Read this first.
 
 ### 💡 Open ideas — [`IDEAS.md`](IDEAS.md)
 Scoped, claimable contribution endpoints — one per open signal. If you want to build something, pick one here.
@@ -36,6 +36,7 @@ Open-source tools built directly from high-signal pain points.
 | [rag-eval-starter](solutions/rag-eval-starter/) | [SIGNAL-001](SIGNALS.md#-signal-001--rag-evaluation-expensive-models-underperform-cheaper-ones) | Compare RAG configs across OpenAI, Anthropic, Gemini, and Groq. Find what actually moves the needle. | [Try it →](https://huggingface.co/spaces/SidharthKriplani/rag-eval-starter) |
 | [paper-repro-auditor](solutions/paper-repro-auditor/) | [SIGNAL-002](SIGNALS.md#-signal-002--ml-paper-reproduction-stuck-below-reported-accuracy) | Paste paper config + your config, get ranked reproduction risk factors. Zero dependencies. | CLI |
 | [finetune-failure-extractor](solutions/finetune-failure-extractor/) | [SIGNAL-005](SIGNALS.md#-signal-005--fine-tuning-feedback-loop-has-no-standard-tooling) | Reads eval output, ranks failure modes by frequency, outputs training data priority manifest. Zero dependencies. | CLI |
+| [quant-pareto-bench](solutions/quant-pareto-bench/) | [SIGNAL-004](SIGNALS.md#-signal-004--quantization-accuracy-vs-latency-tradeoffs-are-invisible) | Your GGUF files + your prompts → accuracy vs latency Pareto frontier across quantization levels. | CLI |
 
 ### 📡 Signal layer — [`digest/`](digest/)
 Scans 7 AI/ML and Indian tech communities on Reddit every 2 days. No API key required.

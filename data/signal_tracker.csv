@@ -5,6 +5,7 @@ signal_id,signal_ref,status,claimed_by,solution_ref,notes,timestamp
 1t5anla,SIGNAL-003,open,,,BibTeX citation hallucination auditor.,2026-05-16T19:00:00
 1t5anla,SIGNAL-003,superseded,,,"Gap closed. BibTeX Verifier (browser), RefChecker, CheckIfExist all fully solve this with zero setup.",2026-05-17T10:00:00
 1tdb4ic,SIGNAL-004,open,,,Quantization Pareto evaluator. See inferencelens.,2026-05-16T19:00:00
+1tdb4ic,SIGNAL-004,deployed,SidharthKriplani,quant-pareto-bench,"GGUF-based Pareto bench. Own prompts + own model. Exact match or LLM judge. ASCII Pareto plot.",2026-05-17T14:00:00
 1tde3m1,SIGNAL-005,open,,,Fine-tuning failure-mode extractor.,2026-05-16T19:00:00
 1tde3m1,SIGNAL-005,deployed,SidharthKriplani,finetune-failure-extractor,Zero-dependency CLI. Classifies errors into 7 failure types. Outputs ranked training data manifest.,2026-05-17T12:00:00
 1ten61r,SIGNAL-006,open,,,README vs CI config diff checker.,2026-05-16T19:00:00

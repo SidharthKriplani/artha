@@ -147,6 +147,25 @@ Streamlit frontend with three modes:
 
 ---
 
+## The optimization objective (added 2026-05-17)
+
+Every solution must clear one bar:
+
+**Does a fully-solving, zero-friction version of this exist for AI/ML builders?**
+
+Not "does something like this exist" — something always exists. The question is whether existing solutions require accounts, complex setup, or solve a slightly different problem. This bar is what differentiates ARTHA from a curated list or ideas repo.
+
+Gap verification is mandatory before any signal is listed as `open`. Enforced at three layers:
+1. `track.py --claim` checks SIGNALS.md for a "Gap verification" section — exits with error if missing
+2. SIGNALS.md template requires a completed Gap verification section
+3. PR template has a mandatory checkbox for it
+
+Two signals were superseded on this basis (2026-05-17):
+- SIGNAL-003 (citation hallucination): BibTeX Verifier, RefChecker, CheckIfExist all fully solve it with zero setup
+- SIGNAL-007 (RAM vs GPU tradeoffs): LLMfit.io (497 models), LocalLLM.in (within 5% accuracy) fully solve it
+
+---
+
 ## What was built: rag-eval-starter (first solution sprint)
 
 Located at: solutions/rag-eval-starter/
@@ -259,17 +278,73 @@ with Postgres would be premature optimisation.
 
 ---
 
+## What was built: rag-eval-starter — multi-provider upgrade (2026-05-17)
+
+rag-eval-starter was upgraded from OpenAI-only to four providers: OpenAI, Anthropic, Google Gemini, Groq.
+
+### Architecture change
+
+Added `get_llm(model_name, api_keys)` and `get_embeddings(api_keys)` factory functions in eval_core.py. A `PROVIDER_MODELS` dict maps provider → model list. A reverse `MODEL_PROVIDER` dict maps model → provider for the factory dispatch. All evaluation functions now accept `api_keys: dict` instead of a bare API key string.
+
+Why this pattern: lazy imports per provider avoid ImportError when a provider's package is not installed or no key is provided. Only the selected provider's library is imported at runtime.
+
+Gradio UI: four accordions (OpenAI open by default, others collapsed). Each has its own API key input and model CheckboxGroup. Results table includes a "provider" column.
+
+HuggingFace Spaces deployment: sdk_version 5.9.1 in README YAML frontmatter. Gradio 4.x was incompatible with Python 3.13 (audioop removed) and newer huggingface_hub (HfFolder removed). Gradio 5 fixed both.
+
+---
+
+## What was built: paper-repro-auditor — SIGNAL-002 (2026-05-17)
+
+Located at: solutions/paper-repro-auditor/
+
+**Signal:** r/MachineLearning — PhD student follows paper setup, cannot hit reported numbers. Gap was a single undocumented preprocessing step. This is the norm, not the exception. 94 upvotes, 53 comments.
+
+**Gap:** Papers With Code tracks availability, not practitioner-side reproduction gaps. NeurIPS checklists are for authors. Nothing takes two configs and outputs ranked risk factors.
+
+**What it does:** CLI tool (interactive or JSON file mode). Compares paper config vs your config across 10 risk dimensions: random seed, data splits, normalization, metric computation, augmentation, checkpoint selection, optimizer + LR schedule, batch size, training duration, hardware/library versions. Outputs HIGH/MEDIUM/LOW per dimension, sorted by risk score, with fix-these-first list. Zero dependencies, pure Python.
+
+**Key design decision:** Vague paper descriptions ("standard settings", "default") automatically score MEDIUM risk. Completely undocumented settings score HIGH. Exact matches score LOW = 0. Scoring is heuristic, not learned — intentional, keeps the tool zero-dependency.
+
+**Known limitation:** Tool is only as good as the user's ability to extract config from the paper. Heavily underreported papers produce many "not stated → HIGH" flags, which is accurate but not specific.
+
+---
+
+## What was built: finetune-failure-extractor — SIGNAL-005 (2026-05-17)
+
+Located at: solutions/finetune-failure-extractor/
+
+**Signal:** r/LocalLLaMA — practitioners fine-tuning small models on verifiable tasks (math, code, reasoning) re-train blindly because they have no way to identify which failure modes repeat. 233 upvotes, 52 comments.
+
+**Gap:** Langfuse does error clustering but requires instrumentation and account setup. W&B tracks metrics but not failure taxonomy. Nothing takes eval output → clusters by failure type → outputs ranked training data manifest.
+
+**What it does:** CLI tool. Reads eval output (CSV, JSON, or JSONL) — needs input, prediction, reference per row, optional error_note. Classifies each error across 7 failure types using regex + keyword matching: wrong operator, off-by-one, missing reasoning step, factual gap, format error, instruction following failure, overconfidence. Outputs ranked manifest: frequency, percentage, examples per type. Training data priority list at bottom. Zero dependencies, pure Python.
+
+**Key design decision:** Pattern matching (not LLM-as-judge) for classification. Deliberate: keeps tool zero-dependency, zero cost, zero latency, fully reproducible. Trade-off: will miss subtle or domain-specific failures. Unclassified bucket catches these for manual review.
+
+**Key design decision:** error_note field in eval output dramatically improves classification accuracy. Teams should add notes during eval review — even short descriptions like "wrong operator" or "hallucination" are enough.
+
+---
+
 ## What comes next
 
-1. Install dependencies on local Mac: pip install -r requirements.txt
-2. Deploy rag-eval-starter to HuggingFace Spaces
-3. Find the original Reddit thread and reply with the tool link (substance 
-   first, link only if directly relevant)
-4. Run ARTHA scraper again in 2 days, review new signals
-5. Pick second pain point, build second solution sprint
-6. After 5-6 solutions, create a curated index in solutions/README.md — 
-   this becomes the collection repo equivalent to awesome-llm-apps
+**Done (2026-05-17):**
+- rag-eval-starter deployed on HuggingFace Spaces
+- rag-eval-starter upgraded to 4 providers (OpenAI, Anthropic, Google, Groq)
+- SIGNAL-002 deployed: paper-repro-auditor
+- SIGNAL-005 deployed: finetune-failure-extractor
+- SIGNAL-003 and SIGNAL-007 superseded (gap fully closed by existing tools)
+- Gap verification enforcement added (track.py + SIGNALS.md template + PR template)
+- Optimization objective added to README and CONTRIBUTING.md
+- Community infrastructure: IDEAS.md, CONTRIBUTING.md, CONTRIBUTORS.md, GitHub issue/PR templates
 
-The consistency of the loop is the product. One sprint every 2-3 weeks, 
-maintained over 6-12 months, compounds into a credible public record of 
+**Next:**
+1. Build SIGNAL-004: quantization accuracy vs latency Pareto evaluator — bring your own prompts + model, get Pareto frontier across quantization levels. Possible integration with inferencelens.
+2. Build SIGNAL-006: README vs CI config diff checker (lower priority, weak signal)
+3. Run digest every 2 days, review new signals, surface next build
+4. Post to original SIGNAL-001 Reddit thread with tool link (once Reddit account ready)
+5. After 5-6 solutions, curated index in solutions/README.md → the collection repo
+
+The consistency of the loop is the product. One sprint every 2-3 weeks,
+maintained over 6-12 months, compounds into a credible public record of
 applied AI judgment.

@@ -1,0 +1,2 @@
+llama-cpp-python==0.3.9
+openai==1.82.0        # optional — only needed for --mode llm (LLM judge scoring)

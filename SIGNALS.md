@@ -77,9 +77,9 @@ A PhD student implements a paper's method, follows the described setup, and cann
 
 ---
 
-## 🔴 SIGNAL-004 — Quantization accuracy vs latency tradeoffs are invisible
+## ✅ SIGNAL-004 — Quantization accuracy vs latency tradeoffs are invisible
 
-**Status:** `open`
+**Status:** `deployed` → [quant-pareto-bench](solutions/quant-pareto-bench/)
 
 **Source:** [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1tdb4ic/) · 218↑ · 46💬 · score 3
 
@@ -91,9 +91,7 @@ Builders choose quantization levels (FP8, INT4, GPTQ, AWQ) based on memory const
 - No tool lets you bring your own prompts and your own model and get a Pareto frontier across quantization levels
 - **Conclusion: gap is real but narrow. Own-prompt, own-model quantization comparison has no existing tool.**
 
-**Note:** Related to [inferencelens](https://github.com/SidharthKriplani/inferencelens) — possible integration.
-
-**Build this:** See [IDEAS.md](IDEAS.md#idea-003)
+**What was built:** [quant-pareto-bench](solutions/quant-pareto-bench/) — bring your own GGUF files + prompts, get tokens/sec, accuracy, and a Pareto frontier across quantization levels. Exact match or LLM judge scoring. ASCII scatter plot. Runs on CPU.
 
 ---
 
