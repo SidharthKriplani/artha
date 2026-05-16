@@ -61,6 +61,17 @@ python3 track.py --claim SIGNAL-XXX --github your-github-username
 
 This marks the signal as claimed so no one else starts the same thing in parallel.
 
+**Claim expiry — 7 days.**
+A claimed signal that hasn't moved to `building` or `deployed` within 7 days is automatically freed when anyone runs `python3 track.py --list`. The signal becomes claimable again. Your work isn't deleted — you can re-claim if you're still on it.
+
+Move the status to keep your claim alive:
+```bash
+# Once you've started building:
+python3 track.py --update SIGNAL-XXX --status building
+```
+
+The 7-day clock resets each time you move status. Deployed within 7 days of claiming → no issue at all.
+
 ### 3. Build it
 
 Each solution lives in `solutions/your-solution-name/`.

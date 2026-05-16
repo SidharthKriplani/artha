@@ -76,6 +76,8 @@ python3 track.py --claim SIGNAL-XXX --github your-username
 4. Build it — your solution folder needs `README.md`, `problem.md`, `scope.md`, `requirements.txt`
 5. Open a PR — you appear in [`CONTRIBUTORS.md`](CONTRIBUTORS.md)
 
+**Claim expiry:** claims auto-free after 7 days if not moved to `building` or `deployed`. Move status to keep your claim alive: `python3 track.py --update SIGNAL-XXX --status building`
+
 You know the problem is real before you write a line of code.
 
 ---
