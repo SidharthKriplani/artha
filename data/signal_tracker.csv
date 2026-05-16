@@ -1,0 +1,8 @@
+signal_id,signal_ref,status,claimed_by,solution_ref,notes,timestamp
+1tdusvx,SIGNAL-001,deployed,SidharthKriplani,rag-eval-starter,First solution sprint. Live on HuggingFace Spaces.,2026-05-16T18:00:00
+1t4dkew,SIGNAL-002,open,,,Paper reproduction gap auditor.,2026-05-16T19:00:00
+1t5anla,SIGNAL-003,open,,,BibTeX citation hallucination auditor.,2026-05-16T19:00:00
+1tdb4ic,SIGNAL-004,open,,,Quantization Pareto evaluator. See inferencelens.,2026-05-16T19:00:00
+1tde3m1,SIGNAL-005,open,,,Fine-tuning failure-mode extractor.,2026-05-16T19:00:00
+1ten61r,SIGNAL-006,open,,,README vs CI config diff checker.,2026-05-16T19:00:00
+1tdyf75,SIGNAL-007,open,,,Local LLM hardware fit calculator.,2026-05-16T19:00:00
