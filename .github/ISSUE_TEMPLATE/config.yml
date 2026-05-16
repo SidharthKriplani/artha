@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read SIGNALS.md first
+    url: https://github.com/SidharthKriplani/artha/blob/main/SIGNALS.md
+    about: See all documented pain points before opening a new signal issue.
+  - name: Read IDEAS.md first
+    url: https://github.com/SidharthKriplani/artha/blob/main/IDEAS.md
+    about: See all open contribution ideas before proposing a new one.
