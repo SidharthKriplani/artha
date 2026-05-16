@@ -2,6 +2,7 @@ data/artha.db
 data/seen_ids.json
 data/embedding_cache/
 data/reports/
+# pain_signals.csv is intentionally tracked — new signals auto-committed on each run
 __pycache__/
 *.pyc
 *.pyo

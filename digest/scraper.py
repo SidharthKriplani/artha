@@ -218,6 +218,38 @@ def run():
             print(f"  Upvotes: {r['upvotes']} | Comments: {r['comments']} | Keywords: {r['matched_keywords'][:60]}")
             print()
 
+    # Auto-push new signals to GitHub
+    if new_rows:
+        _autopush(len(new_rows))
+
+
+def _autopush(new_count: int):
+    """Commit and push updated pain_signals.csv to GitHub automatically."""
+    import subprocess
+
+    repo_root = Path(__file__).parent.parent
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    commands = [
+        ["git", "-C", str(repo_root), "add", "data/pain_signals.csv"],
+        ["git", "-C", str(repo_root), "commit", "-m",
+         f"data: +{new_count} pain signals [{timestamp}]"],
+        ["git", "-C", str(repo_root), "push"],
+    ]
+
+    print("  Pushing signals to GitHub...")
+    for cmd in commands:
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode != 0:
+            # commit fails cleanly if nothing changed — not an error
+            if "nothing to commit" in result.stdout + result.stderr:
+                print("  Nothing new to push.")
+                return
+            print(f"  Git warning: {result.stderr.strip()}")
+            return
+
+    print(f"  ✓ Pushed {new_count} new signals to GitHub.\n")
+
 
 if __name__ == "__main__":
     run()
