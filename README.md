@@ -4,38 +4,58 @@
 
 ARTHA monitors developer communities for recurring pain points, scores them by evidence strength, and converts the highest-signal ones into focused open-source solutions — every one traceable to a real complaint with real upvotes.
 
----
-
-## The idea
-
-AI/ML builders hit the same walls every week. RAG pipelines that break in production. Evaluation frameworks that are too complex to set up. Agent memory that doesn't hold across sessions. These problems get discussed in Reddit threads and GitHub issues, then forgotten.
-
-ARTHA turns that signal into structured intelligence — and then into usable tools.
-
-Every solution in this repo was born from a specific community thread, not from guesswork.
+This is not a collection of ideas. It is a collection of evidence.
 
 ---
 
 ## What's inside
 
-### Signal layer — `digest/`
+### 🔴 Open signals — [`SIGNALS.md`](SIGNALS.md)
+7 documented developer pain points, each traced to a real community thread. One deployed. Six waiting to be built. Read this first.
+
+### 💡 Open ideas — [`IDEAS.md`](IDEAS.md)
+Scoped, claimable contribution endpoints — one per open signal. If you want to build something, pick one here.
+
+### ✅ Solutions — [`solutions/`](solutions/)
+Open-source tools built directly from high-signal pain points.
+
+| Solution | Signal | What it does | Live |
+|---|---|---|---|
+| [rag-eval-starter](solutions/rag-eval-starter/) | [SIGNAL-001](SIGNALS.md#-signal-001--rag-evaluation-expensive-models-underperform-cheaper-ones) | Compare RAG configs across OpenAI, Anthropic, Gemini, and Groq. Find what actually moves the needle. | [Try it →](https://huggingface.co/spaces/SidharthKriplani/rag-eval-starter) |
+
+### 📡 Signal layer — [`digest/`](digest/)
 Scans 7 AI/ML and Indian tech communities on Reddit every 2 days. No API key required.
 Scores each post 1–3 by engagement, frustration language, and keyword specificity.
-New signals auto-commit to `data/pain_signals.csv` on every run.
+New signals auto-commit to [`data/pain_signals.csv`](data/pain_signals.csv) on every run.
 
 **Communities tracked:**
 `r/LocalLLaMA` · `r/MachineLearning` · `r/LanguageModelHacking` · `r/SideProject` · `r/devtools` · `r/developersIndia` · `r/indianstartups`
 
-### Intelligence layer — `intelligence/`
+### 🧠 Intelligence layer — [`intelligence/`](intelligence/)
 Runs embeddings + HDBSCAN clustering + evidence pack generation on collected signals.
 Surfaces workaround patterns, tool rejections, and ICP signals — not just summaries.
 
-### Solutions — `solutions/`
-Open-source tools built directly from high-signal pain points.
+### 📋 Signal tracker — [`track.py`](track.py)
+Append-only lifecycle manager. Tracks every signal from open → claimed → building → deployed.
 
-| Solution | Pain Source | Signal | What it does |
-|---|---|---|---|
-| [rag-eval-starter](solutions/rag-eval-starter/) | r/LocalLLaMA | 22↑ 27💬 | Compare RAG configurations on your documents. Find what actually moves the needle. · [Try it live →](https://huggingface.co/spaces/SidharthKriplani/rag-eval-starter) |
+```bash
+python3 track.py --list
+```
+
+---
+
+## Contributing
+
+ARTHA is built to be extended by anyone.
+
+Every open idea in [`IDEAS.md`](IDEAS.md) traces back to a documented pain point. You know the problem is real before you write a line of code.
+
+**To claim an idea and build a solution:**
+```bash
+python3 track.py --claim SIGNAL-XXX --github your-username
+```
+
+Read [`CONTRIBUTING.md`](CONTRIBUTING.md) for the full process. Every contributor appears in [`CONTRIBUTORS.md`](CONTRIBUTORS.md).
 
 ---
 
@@ -46,9 +66,10 @@ pip install requests
 python3 digest/scraper.py
 ```
 
-Results saved to `data/pain_signals.csv`. Scores 1–3. Filter by score = 3 to see highest-priority signals.
+Results saved to `data/pain_signals.csv`. Scores 1–3. Filter by score = 3 for highest-priority signals.
+New signals auto-push to GitHub after each run.
 
-Auto-schedules every 2 days (Mac):
+Auto-schedule every 2 days (Mac):
 ```bash
 crontab -e
 # Add: 0 8 */2 * * cd ~/Documents/GitHub/artha && python3 digest/scraper.py
@@ -74,20 +95,26 @@ streamlit run ui/app.py
 
 ```
 artha/
+├── SIGNALS.md           ← documented pain points with evidence
+├── IDEAS.md             ← open contribution endpoints
+├── CONTRIBUTING.md      ← how to build here
+├── CONTRIBUTORS.md      ← everyone who shipped something
+├── track.py             ← signal lifecycle CLI
 ├── digest/
-│   └── scraper.py           # Reddit signal scanner, auto-pushes to GitHub
+│   └── scraper.py       ← Reddit signal scanner, auto-pushes to GitHub
 ├── intelligence/
-│   ├── embeddings.py        # sentence-transformers pipeline
-│   ├── clustering.py        # HDBSCAN + TF-IDF cluster labels
-│   ├── scoring.py           # quote ranking, workaround extraction
-│   └── report.py            # evidence pack generator
-├── storage/                 # SQLite + SQLAlchemy, source-aware schema
-├── api/main.py              # FastAPI backend
-├── ui/app.py                # Streamlit evidence pack viewer
+│   ├── embeddings.py    ← sentence-transformers pipeline
+│   ├── clustering.py    ← HDBSCAN + TF-IDF cluster labels
+│   ├── scoring.py       ← quote ranking, workaround extraction
+│   └── report.py        ← evidence pack generator
+├── storage/             ← SQLite + SQLAlchemy, source-aware schema
+├── api/main.py          ← FastAPI backend
+├── ui/app.py            ← Streamlit evidence pack viewer
 ├── data/
-│   └── pain_signals.csv     # Live signal log — updates every 2 days
-└── solutions/               # Open-source tools from real pain signals
-    └── rag-eval-starter/
+│   ├── pain_signals.csv     ← live signal log, updates every 2 days
+│   └── signal_tracker.csv   ← solution lifecycle tracker
+└── solutions/
+    └── rag-eval-starter/    ← RAG config evaluator, live on HuggingFace
 ```
 
 ---
@@ -103,4 +130,4 @@ Every solution in `solutions/` includes `problem.md`, `prd.md`, `eval_plan.md`, 
 
 ---
 
-*Built by [@SidharthKriplani](https://github.com/SidharthKriplani)*
+*Built by [@SidharthKriplani](https://github.com/SidharthKriplani) · Contributions welcome — see [IDEAS.md](IDEAS.md)*
