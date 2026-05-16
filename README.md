@@ -8,6 +8,18 @@ This is not a collection of ideas. It is a collection of evidence.
 
 ---
 
+## The optimization objective
+
+Every solution in this repo must clear one bar:
+
+**Does a fully-solving, zero-friction version of this exist for AI/ML builders?**
+
+Not "does something like this exist" — something always exists. The question is whether the existing solutions require accounts, complex setup, deep expertise, or solve a slightly different problem. If the answer is yes — there is a real gap. If the answer is no — we don't build it.
+
+This is what makes ARTHA different from a curated list or an ideas repo. The signal is real. The gap is verified. The build is justified.
+
+---
+
 ## What's inside
 
 ### 🔴 Open signals — [`SIGNALS.md`](SIGNALS.md)

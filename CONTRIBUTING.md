@@ -28,6 +28,16 @@ Most open source contributions fail because the contributor doesn't know whether
 
 ARTHA solves this differently. Every open idea in [IDEAS.md](IDEAS.md) links to a documented signal — a real community thread with real upvotes and real discussion. Before you write a line of code, you can verify for yourself that the problem is real.
 
+**The optimization objective — read this before proposing anything:**
+
+The bar for a solution is not "does this solve a real problem." The bar is:
+
+> Does a fully-solving, zero-friction version of this already exist for AI/ML builders?
+
+Something always exists. The question is whether it requires accounts, complex setup, deep expertise, or solves a slightly different problem for a different audience. If existing solutions fall short on any of these — there is a real gap worth filling.
+
+Before claiming a signal, spend 10 minutes searching. If you find a tool that fully solves it with zero friction for the target user — the gap is closed. Document what you found in the signal issue and move on to the next one. That is also a contribution.
+
 This means:
 - You don't build things nobody asked for
 - You don't compete with existing tools that already solve the problem
