@@ -1,2 +1,3 @@
-# finetune-failure-extractor has zero dependencies — pure Python stdlib only.
-# Python 3.10+ required.
+# CLI: zero dependencies — pure Python stdlib only.
+# Gradio app (app.py / HuggingFace Spaces):
+gradio==5.9.1

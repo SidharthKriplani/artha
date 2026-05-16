@@ -34,8 +34,8 @@ Open-source tools built directly from high-signal pain points.
 | Solution | Signal | What it does | Live |
 |---|---|---|---|
 | [rag-eval-starter](solutions/rag-eval-starter/) | [SIGNAL-001](SIGNALS.md#-signal-001--rag-evaluation-expensive-models-underperform-cheaper-ones) | Compare RAG configs across OpenAI, Anthropic, Gemini, and Groq. Find what actually moves the needle. | [Try it →](https://huggingface.co/spaces/SidharthKriplani/rag-eval-starter) |
-| [paper-repro-auditor](solutions/paper-repro-auditor/) | [SIGNAL-002](SIGNALS.md#-signal-002--ml-paper-reproduction-stuck-below-reported-accuracy) | Paste paper config + your config, get ranked reproduction risk factors. Zero dependencies. | CLI |
-| [finetune-failure-extractor](solutions/finetune-failure-extractor/) | [SIGNAL-005](SIGNALS.md#-signal-005--fine-tuning-feedback-loop-has-no-standard-tooling) | Reads eval output, ranks failure modes by frequency, outputs training data priority manifest. Zero dependencies. | CLI |
+| [paper-repro-auditor](solutions/paper-repro-auditor/) | [SIGNAL-002](SIGNALS.md#-signal-002--ml-paper-reproduction-stuck-below-reported-accuracy) | Paste paper config + your config, get ranked reproduction risk factors. Zero dependencies. | [Try it →](https://huggingface.co/spaces/SidharthKriplani/paper-repro-auditor) |
+| [finetune-failure-extractor](solutions/finetune-failure-extractor/) | [SIGNAL-005](SIGNALS.md#-signal-005--fine-tuning-feedback-loop-has-no-standard-tooling) | Reads eval output, ranks failure modes by frequency, outputs training data priority manifest. Zero dependencies. | [Try it →](https://huggingface.co/spaces/SidharthKriplani/finetune-failure-extractor) |
 | [quant-pareto-bench](solutions/quant-pareto-bench/) | [SIGNAL-004](SIGNALS.md#-signal-004--quantization-accuracy-vs-latency-tradeoffs-are-invisible) | Your GGUF files + your prompts → accuracy vs latency Pareto frontier across quantization levels. | CLI |
 
 ### 📡 Signal layer — [`digest/`](digest/)
