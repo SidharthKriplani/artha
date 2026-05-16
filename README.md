@@ -35,7 +35,7 @@ Open-source tools built directly from high-signal pain points.
 
 | Solution | Pain Source | Signal | What it does |
 |---|---|---|---|
-| [rag-eval-starter](solutions/rag-eval-starter/) | r/LocalLLaMA | 22↑ 27💬 | Compare RAG configurations on your documents. Find what actually moves the needle. |
+| [rag-eval-starter](solutions/rag-eval-starter/) | r/LocalLLaMA | 22↑ 27💬 | Compare RAG configurations on your documents. Find what actually moves the needle. · [Try it live →](https://huggingface.co/spaces/SidharthKriplani/rag-eval-starter) |
 
 ---
 

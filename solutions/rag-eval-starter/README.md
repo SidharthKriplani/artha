@@ -4,7 +4,7 @@ emoji: 🔍
 colorFrom: blue
 colorTo: indigo
 sdk: gradio
-sdk_version: 4.0.0
+sdk_version: 5.9.1
 app_file: app.py
 pinned: false
 ---
@@ -14,6 +14,12 @@ pinned: false
 **Compare RAG configurations on your documents. Find what actually moves the needle.**
 
 Most builders switch to expensive models when RAG quality is poor. The real culprit is almost always retrieval — chunk size, top-k, context quality. This tool makes that visible in minutes.
+
+---
+
+## Try it live
+
+**[🔍 Open on HuggingFace Spaces](https://huggingface.co/spaces/SidharthKriplani/rag-eval-starter)** — no setup, runs in your browser. Bring your OpenAI key.
 
 ---
 
