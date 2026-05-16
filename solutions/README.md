@@ -52,7 +52,7 @@ Every tool here traces back to a real developer pain point — a Reddit thread w
 | **Setup** | None — pure Python stdlib |
 | **Who it's for** | ML practitioners stuck below a paper's reported numbers |
 
-→ [View solution](paper-repro-auditor/) · [Try it on HF Spaces](https://huggingface.co/spaces/SidharthKriplani/paper-repro-auditor) · [Scope & limitations](paper-repro-auditor/scope.md)
+→ [View solution](paper-repro-auditor/) · [Try it on HF Spaces](https://huggingface.co/spaces/sidharthkriplani/paper-repro-auditor) · [Scope & limitations](paper-repro-auditor/scope.md)
 
 ---
 
@@ -70,7 +70,7 @@ Every tool here traces back to a real developer pain point — a Reddit thread w
 | **Setup** | None — pure Python stdlib |
 | **Who it's for** | Anyone fine-tuning small models on verifiable tasks |
 
-→ [View solution](finetune-failure-extractor/) · [Try it on HF Spaces](https://huggingface.co/spaces/SidharthKriplani/finetune-failure-extractor) · [Scope & limitations](finetune-failure-extractor/scope.md)
+→ [View solution](finetune-failure-extractor/) · [Try it on HF Spaces](https://huggingface.co/spaces/sidharthkriplani/finetune-failure-extractor) · [Scope & limitations](finetune-failure-extractor/scope.md)
 
 ---
 

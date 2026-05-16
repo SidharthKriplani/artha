@@ -1,13 +1,13 @@
 ---
 title: Fine-Tune Failure Extractor
 emoji: 🔍
-colorFrom: orange
-colorTo: red
+colorFrom: red
+colorTo: yellow
 sdk: gradio
 sdk_version: 5.9.1
 app_file: app.py
 pinned: false
-short_description: Upload eval output, get ranked failure modes for your fine-tuned model.
+short_description: Rank failure modes in your fine-tuned model's eval output.
 tags:
   - machine-learning
   - fine-tuning

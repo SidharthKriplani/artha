@@ -326,24 +326,52 @@ Located at: solutions/finetune-failure-extractor/
 
 ---
 
+## What was built: quant-pareto-bench — SIGNAL-004 (2026-05-17)
+
+Located at: solutions/quant-pareto-bench/
+
+**Signal:** r/LocalLLaMA — builders choose quantization levels (INT4, Q8, F16) based on memory constraints alone, never based on measured quality tradeoffs. The accuracy cost of going smaller is invisible until something breaks in production. 87 upvotes, 41 comments.
+
+**Gap:** GGUF authors publish perplexity numbers but not task-specific accuracy. llama-bench measures tokens/sec only. Nothing takes your prompts + your GGUF files → accuracy vs latency Pareto frontier across quantization levels.
+
+**What it does:** CLI tool. Point at multiple GGUF files of the same model (Q4_K_M, Q8_0, F16, etc.) and provide your prompts with references. Runs each model on every prompt, measures tokens/sec and latency, scores outputs with exact match or gpt-4o-mini as judge. Computes Pareto frontier — which quantization levels are dominated (worse on both axes) and which are worth keeping. Outputs ASCII scatter plot + ranked table. Optional JSON export.
+
+**Key design decision:** Two scoring modes — `exact` (zero dependency, deterministic) and `llm` (gpt-4o-mini, handles natural language). Exact mode is default and free. LLM mode is opt-in for tasks where exact matching would miss semantically correct answers.
+
+**Key design decision:** Pareto frontier, not just ranking. A Q4 model at 90% accuracy and 3x speed is not obviously worse than Q8 at 92% accuracy and 1x speed. The frontier makes the tradeoff explicit and lets the user pick their operating point.
+
+**Known limitation:** llama-cpp-python compiles from source. First-time setup takes 5-15 minutes depending on system. GPU acceleration requires additional compile flags. This is unavoidable given that GGUF loading is the only zero-cost, cross-platform way to benchmark local models.
+
+**Infrastructure note:** CLI-only (no HF Spaces). llama-cpp-python cannot run in a serverless container — it requires the user's local hardware where the GGUF files live. This is the correct architecture: the tool runs where the models are.
+
+---
+
 ## What comes next
 
-**Done (2026-05-17):**
-- rag-eval-starter deployed on HuggingFace Spaces
+**Done (Sprint 001, 2026-05-16):**
+- rag-eval-starter built and deployed on HuggingFace Spaces
 - rag-eval-starter upgraded to 4 providers (OpenAI, Anthropic, Google, Groq)
-- SIGNAL-002 deployed: paper-repro-auditor
-- SIGNAL-005 deployed: finetune-failure-extractor
+- Intelligence pipeline (embeddings → HDBSCAN → evidence packs)
+- Community infrastructure: CONTRIBUTING.md, CONTRIBUTORS.md, GitHub issue/PR templates
+
+**Done (Sprint 002, 2026-05-17):**
+- SIGNAL-002 deployed: paper-repro-auditor (HF Spaces + CLI)
+- SIGNAL-004 deployed: quant-pareto-bench (CLI, local GGUF only)
+- SIGNAL-005 deployed: finetune-failure-extractor (HF Spaces + CLI)
 - SIGNAL-003 and SIGNAL-007 superseded (gap fully closed by existing tools)
-- Gap verification enforcement added (track.py + SIGNALS.md template + PR template)
-- Optimization objective added to README and CONTRIBUTING.md
-- Community infrastructure: IDEAS.md, CONTRIBUTING.md, CONTRIBUTORS.md, GitHub issue/PR templates
+- Gap verification enforcement (track.py + SIGNALS.md template + PR template)
+- Optimization objective added to README
+- Unit tests for all three core modules
+- scope.md for all 4 solutions
+- solutions/README.md decision guide
+- GitHub Actions cron for digest (every 2 days)
+- SPRINTS.md sprint log
 
 **Next:**
-1. Build SIGNAL-004: quantization accuracy vs latency Pareto evaluator — bring your own prompts + model, get Pareto frontier across quantization levels. Possible integration with inferencelens.
-2. Build SIGNAL-006: README vs CI config diff checker (lower priority, weak signal)
-3. Run digest every 2 days, review new signals, surface next build
-4. Post to original SIGNAL-001 Reddit thread with tool link (once Reddit account ready)
-5. After 5-6 solutions, curated index in solutions/README.md → the collection repo
+1. Run digest every 2 days (automated) — review new signals for SIGNAL-008 candidates
+2. Post to original Reddit signal threads with tool links (once Reddit account ready)
+3. Build SIGNAL-006 (README vs CI config diff) if signal strengthens
+4. Add GitHub repo topics: llm, rag, evaluation, fine-tuning, quantization, etc.
 
 The consistency of the loop is the product. One sprint every 2-3 weeks,
 maintained over 6-12 months, compounds into a credible public record of

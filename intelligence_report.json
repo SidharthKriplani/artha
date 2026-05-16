@@ -1,0 +1,98 @@
+[
+  {
+    "cluster_id": 0,
+    "label": "built \u00b7 code \u00b7 claude",
+    "frequency": 32,
+    "avg_score": 1.25,
+    "avg_engagement": 26.6,
+    "communities": [
+      "LocalLLaMA",
+      "MachineLearning",
+      "SideProject",
+      "developersIndia",
+      "devtools"
+    ],
+    "top_keywords": [],
+    "top_quotes": [
+      {
+        "text": "Orthrus-Qwen3-8B : up to  7.8\u00d7tokens/forward on Qwen3-8B, frozen backbone, provably identical output distribution",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1te5xpu/orthrusqwen38b_up_to_78tokensforward_on_qwen38b/",
+        "upvotes": 260
+      },
+      {
+        "text": "A First Comprehensive Study of TurboQuant: Accuracy and Performance",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1tdb4ic/a_first_comprehensive_study_of_turboquant/",
+        "upvotes": 218
+      },
+      {
+        "text": "Strix Halo Llama.cpp MTP Benchmarks: 27B Gets Much Faster, 35B Is Mixed",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1teypb8/strix_halo_llamacpp_mtp_benchmarks_27b_gets_much/",
+        "upvotes": 84
+      }
+    ]
+  },
+  {
+    "cluster_id": 1,
+    "label": "built \u00b7 ai \u00b7 actually",
+    "frequency": 138,
+    "avg_score": 1.22,
+    "avg_engagement": 13.7,
+    "communities": [
+      "LocalLLaMA",
+      "MachineLearning",
+      "SideProject",
+      "developersIndia",
+      "devtools",
+      "indianstartups"
+    ],
+    "top_keywords": [],
+    "top_quotes": [
+      {
+        "text": "I Let a Small Model Train on Its Own Mistakes. It Reached 80% on HumanEval and Beat GPT-3.5 on Math",
+        "url": "https://reddit.com/r/LocalLLaMA/comments/1tde3m1/i_let_a_small_model_train_on_its_own_mistakes_it/",
+        "upvotes": 233
+      },
+      {
+        "text": "Stop letting LLMs edit your .bib [D]",
+        "url": "https://reddit.com/r/MachineLearning/comments/1t5anla/stop_letting_llms_edit_your_bib_d/",
+        "upvotes": 187
+      },
+      {
+        "text": "Human-level performance via ML was *not* proven impossible with complexity theory [D]",
+        "url": "https://reddit.com/r/MachineLearning/comments/1tc1xr3/humanlevel_performance_via_ml_was_not_proven/",
+        "upvotes": 143
+      }
+    ]
+  },
+  {
+    "cluster_id": 2,
+    "label": "built \u00b7 github \u00b7 prs",
+    "frequency": 17,
+    "avg_score": 1.18,
+    "avg_engagement": 7.2,
+    "communities": [
+      "LocalLLaMA",
+      "MachineLearning",
+      "SideProject",
+      "devtools"
+    ],
+    "top_keywords": [],
+    "top_quotes": [
+      {
+        "text": "Struggling to reproduce paper results before improving them \u2014 stuck below reported accuracy [R]",
+        "url": "https://reddit.com/r/MachineLearning/comments/1t4dkew/struggling_to_reproduce_paper_results_before/",
+        "upvotes": 94
+      },
+      {
+        "text": "Best tools for Reddit lead generation right now.",
+        "url": "https://reddit.com/r/SideProject/comments/1ter2zz/best_tools_for_reddit_lead_generation_right_now/",
+        "upvotes": 5
+      },
+      {
+        "text": "Simple subscription tracker",
+        "url": "https://reddit.com/r/SideProject/comments/1teoi5e/simple_subscription_tracker/",
+        "upvotes": 4
+      }
+    ]
+  }
+]
