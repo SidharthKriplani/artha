@@ -130,7 +130,7 @@ def snippet(text: str, max_chars: int = 200) -> str:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def run():
+def run(no_push: bool = False):
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     seen_ids = load_seen_ids()
 
@@ -218,8 +218,8 @@ def run():
             print(f"  Upvotes: {r['upvotes']} | Comments: {r['comments']} | Keywords: {r['matched_keywords'][:60]}")
             print()
 
-    # Auto-push new signals to GitHub
-    if new_rows:
+    # Auto-push new signals to GitHub (skipped in CI — workflow handles it)
+    if new_rows and not no_push:
         _autopush(len(new_rows))
 
 
@@ -252,4 +252,9 @@ def _autopush(new_count: int):
 
 
 if __name__ == "__main__":
-    run()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--no-push", action="store_true",
+                        help="Skip auto-push to GitHub (used by CI)")
+    args = parser.parse_args()
+    run(no_push=args.no_push)

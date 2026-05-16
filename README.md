@@ -50,6 +50,9 @@ New signals auto-commit to [`data/pain_signals.csv`](data/pain_signals.csv) on e
 Runs embeddings + HDBSCAN clustering + evidence pack generation on collected signals.
 Surfaces workaround patterns, tool rejections, and ICP signals — not just summaries.
 
+### 📅 Sprint log — [`SPRINTS.md`](SPRINTS.md)
+Every completed sprint documented — what was built, which signal it traces to, and the key technical decisions behind each choice.
+
 ### 📋 Signal tracker — [`track.py`](track.py)
 Append-only lifecycle manager. Tracks every signal from open → claimed → building → deployed.
 
