@@ -1,0 +1,35 @@
+Retrieval-Augmented Generation (RAG)
+
+Retrieval-augmented generation (RAG) is a technique that improves the accuracy and reliability of large language models by grounding their responses in external knowledge. Instead of relying solely on information encoded in model weights during training, RAG retrieves relevant documents from a knowledge base at inference time and provides them as context to the language model.
+
+How RAG Works
+
+A RAG pipeline typically consists of three stages. First, an indexing stage where documents are split into chunks, converted into vector embeddings using an embedding model, and stored in a vector database. Second, a retrieval stage where a user query is embedded and the most semantically similar chunks are fetched from the vector store. Third, a generation stage where the retrieved chunks are combined with the user query into a prompt and passed to a language model to generate the final response.
+
+Failure Modes
+
+RAG pipelines fail in several predictable ways. Poor chunking strategy is one of the most common causes of degraded performance. If chunks are too small, they lose surrounding context. If they are too large, they dilute the retrieval signal and consume context window unnecessarily.
+
+Another common failure is retrieval of irrelevant chunks. This happens when the embedding model cannot distinguish between surface-level lexical similarity and semantic relevance. Reranking models can help by re-scoring retrieved chunks before they are passed to the language model.
+
+Hallucination remains a risk even in RAG systems. When the language model does not find the answer in the retrieved context, it may generate a plausible-sounding but incorrect answer rather than saying it does not know. This is called faithfulness failure.
+
+Evaluation Challenges
+
+Most RAG builders evaluate their systems informally by checking whether answers sound reasonable. This is unreliable. Formal evaluation requires question-answer pairs with ground truth answers, consistent test conditions across configurations, and reproducible metrics.
+
+The three most important RAG evaluation metrics are faithfulness, answer relevance, and context precision. Faithfulness measures whether the generated answer is supported by the retrieved context. Answer relevance measures whether the answer actually addresses the question asked. Context precision measures whether the retrieved chunks are relevant to the question.
+
+A common mistake is switching to a more expensive language model when performance is poor, without first diagnosing whether the problem is in retrieval or generation. In many cases, improving chunk size or adding a reranker produces larger gains than upgrading the model.
+
+Chunk Size
+
+Chunk size is one of the most impactful hyperparameters in a RAG pipeline. Common starting points are 256, 512, and 1024 tokens. Overlap between chunks, typically 10-20% of chunk size, helps preserve context across chunk boundaries. The optimal chunk size depends on the average length of answers expected and the granularity of information in the source documents.
+
+Reranking
+
+Reranking is a technique where a second, more powerful model re-scores the initially retrieved chunks before passing them to the language model. This is particularly useful when the initial retrieval step uses a lightweight embedding model that may return loosely relevant results. Popular reranking models include Cohere Rerank and cross-encoder models from sentence-transformers.
+
+Cost vs Performance
+
+A recurring finding among practitioners is that more expensive language models do not consistently outperform cheaper ones in RAG settings. The performance of a RAG system is more sensitive to retrieval quality than to the language model used for generation. Optimising the retrieval pipeline first before scaling to larger models is generally more cost-effective.

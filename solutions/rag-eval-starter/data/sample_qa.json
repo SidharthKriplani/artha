@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is retrieval-augmented generation?",
+    "ground_truth": "Retrieval-augmented generation (RAG) is a technique that combines a retrieval system with a language model. The retrieval system fetches relevant documents from a knowledge base, and the language model uses those documents as context to generate accurate, grounded answers."
+  },
+  {
+    "question": "What are the main failure modes of RAG pipelines?",
+    "ground_truth": "The main failure modes of RAG pipelines include: retrieving irrelevant chunks due to poor chunking strategy, context window overflow when too many chunks are retrieved, hallucination when the model ignores retrieved context, and evaluation blindness when builders test only with expensive models without establishing a baseline."
+  },
+  {
+    "question": "What is chunk size and why does it matter?",
+    "ground_truth": "Chunk size is the number of tokens or characters each document segment is split into before embedding. Smaller chunks improve retrieval precision but may lose surrounding context. Larger chunks preserve context but reduce retrieval signal strength. The optimal chunk size depends on the document type and query style."
+  },
+  {
+    "question": "What metrics are used to evaluate RAG systems?",
+    "ground_truth": "Common RAG evaluation metrics include: Faithfulness (does the answer stay grounded in retrieved context), Answer Relevance (does the answer actually address the question), and Context Precision (are the retrieved chunks actually useful for answering the question)."
+  },
+  {
+    "question": "What is reranking in RAG?",
+    "ground_truth": "Reranking is a post-retrieval step that re-scores the initially retrieved chunks using a more powerful model before passing them to the language model. It improves the quality of context by filtering out weakly relevant chunks that passed the initial embedding similarity threshold."
+  }
+]
