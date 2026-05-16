@@ -27,18 +27,7 @@ Every solution here traces back to a specific Reddit thread with real upvotes an
 
 ## How it works
 
-```mermaid
-flowchart TD
-    A[🔍 Community Pain\nReddit · HN · GitHub] --> B[📊 Signal Detection\nscored 1–3 every 2 days]
-    B --> C{Gap Verification\ndoes a zero-friction\nsolution exist?}
-    C -->|gap exists| D[💡 Open Idea\nscoped in IDEAS.md]
-    C -->|already solved| E[⬛ Superseded]
-    D --> F[👤 Contributor Claims\ntrack.py --claim]
-    F --> G[🔨 Solution Built\nproblem · prd · scope · code]
-    G --> H[🚀 Deployed\nHuggingFace · CLI · API]
-    H --> I[📈 Portfolio Credibility\nfor every contributor]
-    I -->|attracts better signals\nand contributors| A
-```
+![ARTHA Pipeline](docs/pipeline.svg)
 
 ---
 
