@@ -44,9 +44,9 @@ Builders switch to expensive models when RAG quality is poor, assuming cost = qu
 
 ---
 
-## 🔴 SIGNAL-002 — ML paper reproduction: stuck below reported accuracy
+## ✅ SIGNAL-002 — ML paper reproduction: stuck below reported accuracy
 
-**Status:** `open`
+**Status:** `deployed` → [paper-repro-auditor](solutions/paper-repro-auditor/)
 
 **Source:** [r/MachineLearning](https://www.reddit.com/r/MachineLearning/comments/1t4dkew/) · 94↑ · 53💬 · score 3
 
@@ -59,9 +59,7 @@ A PhD student implements a paper's method, follows the described setup, and cann
 - No tool takes two configs (paper's reported + yours) and outputs ranked reproduction risk factors
 - **Conclusion: gap is real. Nothing exists for structured practitioner-side reproduction gap analysis.**
 
-**What's missing:** A structured gap auditor — paste the paper's config and yours, get ranked high-risk differences: seed, data splits, normalization, metric computation, augmentation, checkpoint selection.
-
-**Build this:** See [IDEAS.md](IDEAS.md#idea-001)
+**What was built:** [paper-repro-auditor](solutions/paper-repro-auditor/) — paste paper config + your config, get ranked reproduction risk factors across 10 dimensions. Zero dependencies, pure Python.
 
 ---
 
@@ -99,9 +97,9 @@ Builders choose quantization levels (FP8, INT4, GPTQ, AWQ) based on memory const
 
 ---
 
-## 🔴 SIGNAL-005 — Fine-tuning feedback loop has no standard tooling
+## ✅ SIGNAL-005 — Fine-tuning feedback loop has no standard tooling
 
-**Status:** `open`
+**Status:** `deployed` → [finetune-failure-extractor](solutions/finetune-failure-extractor/)
 
 **Source:** [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1tde3m1/) · 233↑ · 52💬 · score 3
 
@@ -114,9 +112,7 @@ Practitioners fine-tuning small models on verifiable tasks (math, code, reasonin
 - No tool takes eval output → clusters errors by failure type → outputs a ranked manifest for next training data selection
 - **Conclusion: gap is real. No zero-friction practitioner-side failure mode extractor exists.**
 
-**What's missing:** A failure-mode extractor — run eval, cluster errors by type (wrong operator, off-by-one, reasoning gap, factual gap), output a ranked manifest that feeds next training data selection.
-
-**Build this:** See [IDEAS.md](IDEAS.md#idea-004)
+**What was built:** [finetune-failure-extractor](solutions/finetune-failure-extractor/) — reads eval output (CSV/JSON/JSONL), classifies errors into 7 failure types, outputs a ranked manifest for next training data selection. Zero dependencies, pure Python.
 
 ---
 

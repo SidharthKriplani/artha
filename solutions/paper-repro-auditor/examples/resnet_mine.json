@@ -1,0 +1,12 @@
+{
+  "random_seed": "42",
+  "data_splits": "official ImageNet train/val",
+  "normalization": "mean=[0.485,0.456,0.406] std=[0.229,0.224,0.225]",
+  "metric_computation": "top-1 accuracy on val, last epoch",
+  "augmentation": "random crop 224x224, horizontal flip",
+  "checkpoint_selection": "last epoch",
+  "optimizer": "SGD lr=0.1 momentum=0.9 weight_decay=1e-4 cosine decay",
+  "batch_size": "128",
+  "train_duration": "90 epochs",
+  "hardware_env": "A100 40GB PyTorch 2.1"
+}

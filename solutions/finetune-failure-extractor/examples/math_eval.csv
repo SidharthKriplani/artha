@@ -1,0 +1,24 @@
+input,prediction,reference,error_note
+"What is 15 + 28?",43,43,
+"What is 7 × 8?",54,56,wrong operator - subtracted instead of multiplied
+"A train travels 60km/h for 2 hours. How far?",120,120,
+"If you have 50 apples and give away 13, how many remain?",37,37,
+"What is 2^5?",16,32,off by one power - computed 2^4
+"John has 3 times as many marbles as Sue. Sue has 12. How many does John have?",15,36,wrong operator used addition instead of multiplication
+"What is 100 divided by 4?",25,25,
+"A rectangle is 8m wide and 5m tall. What is its area?",13,40,wrong operator added instead of multiplied
+"How many days in 3 weeks?",22,21,off by one
+"If x+5=12, what is x?",7,7,
+"List primes up to 10: 2,3,5,7,11",2 3 5 7,2 3 5 7,answered different question - 11 is not ≤10 but model excluded it correctly
+"What is the square root of 144?",12,12,
+"What is 999 + 1?",1000,1000,
+"45 / 9 = ?",4,5,off by one - computed 45/10
+"A car costs $20000. After 20% discount what is the price?",16000,16000,
+"What is 3! (factorial)?",5,6,missing reasoning step - skipped final multiplication
+"Convert 0.75 to a fraction",3/5,3/4,wrong fact - incorrect fraction
+"How many edges does a cube have?",8,12,wrong fact
+"Sort [5,2,8,1] ascending",1 2 5 8,1 2 5 8,
+"What is the mean of [4,8,12]?",8,8,
+"The capital of Australia is Sydney","Sydney","Canberra",factually wrong - hallucination
+"2+2=?","5","4",wrong fact
+"Is 17 prime?","No","Yes",factual gap

@@ -1,0 +1,12 @@
+{
+  "random_seed": "not stated",
+  "data_splits": "official ImageNet train/val",
+  "normalization": "mean=[0.485,0.456,0.406] std=[0.229,0.224,0.225]",
+  "metric_computation": "top-1 accuracy on val, best epoch",
+  "augmentation": "random crop 224x224, horizontal flip",
+  "checkpoint_selection": "best val accuracy",
+  "optimizer": "SGD lr=0.1 momentum=0.9 weight_decay=1e-4 step LR /10 at epoch 30,60,90",
+  "batch_size": "256",
+  "train_duration": "90 epochs",
+  "hardware_env": "not stated"
+}

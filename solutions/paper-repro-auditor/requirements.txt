@@ -1,0 +1,2 @@
+# paper-repro-auditor has zero dependencies — pure Python stdlib only.
+# Python 3.10+ required (for match/case and type hints used in core.py).
