@@ -1,48 +1,50 @@
+<div align="center">
+
 # ARTHA
 
 **Evidence-backed open-source build engine for AI/ML builders.**
 
-The system finds the problems. The community builds the tools. The tools build credibility for everyone involved.
-
-This is not a collection of ideas. It is a collection of evidence.
-
----
-
-## How it works
-
-```
-Reddit / community pain
-        ↓
-  signal detection          ← scraper scans 7 communities every 2 days
-        ↓
-  gap verification          ← does a fully-solving, zero-friction version exist?
-        ↓
-   open idea                ← scoped, claimable in IDEAS.md
-        ↓
-  contributor claims        ← track.py --claim SIGNAL-XXX
-        ↓
-   tool shipped             ← solution/ with problem.md, prd.md, eval_plan.md
-        ↓
-  portfolio credibility     ← HuggingFace Spaces, real users, public demos
-        ↓
- more contributors / better signals
-```
+*The system finds the problems. The community builds the tools.*
+*The tools build credibility for everyone involved.*
 
 ---
 
-## Why this exists
+![Signals](https://img.shields.io/badge/signals-7%20documented-dc2626?style=flat-square)
+![Solutions](https://img.shields.io/badge/solutions-4%20deployed-16a34a?style=flat-square)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-3%20Spaces-f59e0b?style=flat-square)
+![Contributions](https://img.shields.io/badge/contributions-welcome-7c3aed?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-64748b?style=flat-square)
 
-AI/ML tooling moves fast. Documentation, evaluation patterns, and failure-mode guides lag behind. Builders hit the same walls every week.
+</div>
 
-LLMs can generate boilerplate. They cannot generate opinionated, tested, real-world patterns born from actual community pain.
+---
+
+> This is not a collection of ideas. It is a collection of evidence.
 
 Every solution here traces back to a specific Reddit thread with real upvotes and real discussion. The signal is real. The gap is verified. The build is justified.
 
 ---
 
+## How it works
+
+```mermaid
+flowchart TD
+    A[🔍 Community Pain\nReddit · HN · GitHub] --> B[📊 Signal Detection\nscored 1–3 every 2 days]
+    B --> C{Gap Verification\ndoes a zero-friction\nsolution exist?}
+    C -->|gap exists| D[💡 Open Idea\nscoped in IDEAS.md]
+    C -->|already solved| E[⬛ Superseded]
+    D --> F[👤 Contributor Claims\ntrack.py --claim]
+    F --> G[🔨 Solution Built\nproblem · prd · scope · code]
+    G --> H[🚀 Deployed\nHuggingFace · CLI · API]
+    H --> I[📈 Portfolio Credibility\nfor every contributor]
+    I -->|attracts better signals\nand contributors| A
+```
+
+---
+
 ## The one bar every solution must clear
 
-**Does a fully-solving, zero-friction version of this exist for AI/ML builders?**
+> **Does a fully-solving, zero-friction version of this exist for AI/ML builders?**
 
 Not "does something like this exist" — something always exists. The question is whether existing solutions require accounts, complex setup, or solve a slightly different problem. If yes — real gap. If no — we don't build it.
 
@@ -52,97 +54,88 @@ Two signals have been superseded on this basis. See [SIGNALS.md](SIGNALS.md).
 
 ## Solutions
 
-Every solution is traceable to a real pain signal.
-
-| Solution | Signal | Builder | What it does | Evidence | Live |
+| Solution | Signal | Builder | What it does | Source | Live |
 |---|---|---|---|---|---|
-| [rag-eval-starter](solutions/rag-eval-starter/) | [SIGNAL-001](SIGNALS.md#-signal-001--rag-evaluation-expensive-models-underperform-cheaper-ones) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Compare RAG configs across OpenAI, Anthropic, Gemini, Groq. Find what actually moves the needle. | [Thread](https://www.reddit.com/r/LocalLLaMA/comments/1hjsgce/) · score 3 | [Try it →](https://huggingface.co/spaces/SidharthKriplani/rag-eval-starter) |
-| [paper-repro-auditor](solutions/paper-repro-auditor/) | [SIGNAL-002](SIGNALS.md#-signal-002--ml-paper-reproduction-stuck-below-reported-accuracy) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Paste paper config + your config, get ranked reproduction risk factors. Zero dependencies. | [Thread](https://www.reddit.com/r/MachineLearning/comments/1ak9hgz/) · score 3 | [Try it →](https://huggingface.co/spaces/sidharthkriplani/paper-repro-auditor) |
-| [finetune-failure-extractor](solutions/finetune-failure-extractor/) | [SIGNAL-005](SIGNALS.md#-signal-005--fine-tuning-feedback-loop-has-no-standard-tooling) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Upload eval output, get ranked failure modes and training data priority list. Zero dependencies. | [Thread](https://www.reddit.com/r/LocalLLaMA/comments/1f8b9jz/) · score 3 | [Try it →](https://huggingface.co/spaces/sidharthkriplani/finetune-failure-extractor) |
-| [quant-pareto-bench](solutions/quant-pareto-bench/) | [SIGNAL-004](SIGNALS.md#-signal-004--quantization-accuracy-vs-latency-tradeoffs-are-invisible) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Your GGUF files + prompts → accuracy vs latency Pareto frontier across quantization levels. | [Thread](https://www.reddit.com/r/LocalLLaMA/comments/1f1g1q4/) · score 3 | CLI |
+| [rag-eval-starter](solutions/rag-eval-starter/) | [SIGNAL-001](SIGNALS.md#-signal-001--rag-evaluation-expensive-models-underperform-cheaper-ones) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Compare RAG configs across OpenAI, Anthropic, Gemini, Groq | [Thread ↗](https://www.reddit.com/r/LocalLLaMA/comments/1hjsgce/) · ⭐3 | [Try it →](https://huggingface.co/spaces/SidharthKriplani/rag-eval-starter) |
+| [paper-repro-auditor](solutions/paper-repro-auditor/) | [SIGNAL-002](SIGNALS.md#-signal-002--ml-paper-reproduction-stuck-below-reported-accuracy) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Paper config vs your config → ranked reproduction risk factors | [Thread ↗](https://www.reddit.com/r/MachineLearning/comments/1ak9hgz/) · ⭐3 | [Try it →](https://huggingface.co/spaces/sidharthkriplani/paper-repro-auditor) |
+| [finetune-failure-extractor](solutions/finetune-failure-extractor/) | [SIGNAL-005](SIGNALS.md#-signal-005--fine-tuning-feedback-loop-has-no-standard-tooling) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Upload eval output → ranked failure modes + training priority list | [Thread ↗](https://www.reddit.com/r/LocalLLaMA/comments/1f8b9jz/) · ⭐3 | [Try it →](https://huggingface.co/spaces/sidharthkriplani/finetune-failure-extractor) |
+| [quant-pareto-bench](solutions/quant-pareto-bench/) | [SIGNAL-004](SIGNALS.md#-signal-004--quantization-accuracy-vs-latency-tradeoffs-are-invisible) | [@SidharthKriplani](https://github.com/SidharthKriplani) | GGUF files + prompts → accuracy vs latency Pareto frontier | [Thread ↗](https://www.reddit.com/r/LocalLLaMA/comments/1f1g1q4/) · ⭐3 | CLI |
 
-Open ideas waiting to be claimed → [`IDEAS.md`](IDEAS.md)
-
----
-
-## Contribute in 10 minutes
-
-1. Read [`SIGNALS.md`](SIGNALS.md) — pick an open signal
-2. Verify the gap yourself (mandatory — see [CONTRIBUTING.md](CONTRIBUTING.md))
-3. Claim it:
-```bash
-python3 track.py --claim SIGNAL-XXX --github your-username
-```
-4. Build it — your solution folder needs `README.md`, `problem.md`, `scope.md`, `requirements.txt`
-5. Open a PR — you appear in [`CONTRIBUTORS.md`](CONTRIBUTORS.md)
-
-**Claim expiry:** claims auto-free after 7 days if not moved to `building` or `deployed`. Move status to keep your claim alive: `python3 track.py --update SIGNAL-XXX --status building`
-
-You know the problem is real before you write a line of code.
+→ [Open ideas waiting to be claimed](IDEAS.md)
 
 ---
 
 ## Flagship trace: rag-eval-starter
 
-The full chain from pain to deployed tool:
+<details>
+<summary>See the full chain from community pain to deployed tool</summary>
 
 | Step | What happened |
 |---|---|
-| **Pain** | r/LocalLLaMA: "Evaluated a RAG chatbot and the most expensive model was the worst performer." 22 upvotes, 27 comments. |
+| **Pain** | r/LocalLLaMA: *"Evaluated a RAG chatbot and the most expensive model was the worst performer."* 22 upvotes, 27 comments. |
 | **Signal** | Scored 3/3 — high engagement, clear frustration, specific workaround pattern detected |
-| **Gap** | Existing tools require instrumentation, accounts, or solve a different problem. Zero-friction config comparison didn't exist. |
+| **Gap verification** | Existing tools require instrumentation, accounts, or solve a different problem. Zero-friction config comparison didn't exist. |
 | **PRD** | [solutions/rag-eval-starter/prd.md](solutions/rag-eval-starter/prd.md) |
 | **Eval plan** | [solutions/rag-eval-starter/eval_plan.md](solutions/rag-eval-starter/eval_plan.md) |
 | **Live** | [HuggingFace Spaces →](https://huggingface.co/spaces/SidharthKriplani/rag-eval-starter) |
 
 Every solution in `solutions/` follows this same chain.
 
+</details>
+
 ---
 
-## What's inside
+## Contribute
 
-**[`SIGNALS.md`](SIGNALS.md)** — 7 documented pain points, each traced to a real community thread. Status: open / claimed / deployed / superseded.
-
-**[`IDEAS.md`](IDEAS.md)** — Scoped, claimable contribution endpoints. One per open signal.
-
-**[`digest/`](digest/)** — Reddit signal scanner. Runs automatically every 2 days via GitHub Actions. Scores posts 1–3. No API key required. Results committed to [`data/pain_signals.csv`](data/pain_signals.csv).
-
-**[`intelligence/`](intelligence/)** — Embeddings + HDBSCAN clustering + evidence pack generation. Surfaces workaround patterns, tool rejections, ICP signals.
-
-**[`SPRINTS.md`](SPRINTS.md)** — Every completed sprint: what was built, which signal it traces to, key decisions.
-
-**[`track.py`](track.py)** — Append-only signal lifecycle CLI.
+### Build a solution for an open signal
 
 ```bash
-python3 track.py --list
+# 1. Pick a signal from IDEAS.md
+# 2. Claim it
+python3 track.py --claim SIGNAL-XXX --github your-username
+
+# 3. Build your solution in solutions/your-solution-name/
+#    Required: README.md · problem.md · scope.md · requirements.txt
+
+# 4. Open a PR → you appear in CONTRIBUTORS.md permanently
 ```
 
-**Communities tracked:**
-`r/LocalLLaMA` · `r/MachineLearning` · `r/LanguageModelHacking` · `r/SideProject` · `r/devtools` · `r/developersIndia` · `r/indianstartups`
+> **Claim expiry:** claims auto-free after 7 days if not moved to `building` or `deployed`.
+> Keep your claim alive: `python3 track.py --update SIGNAL-XXX --status building`
+
+### Propose a new signal
+
+Have a pain point that isn't listed yet?
+
+```
+Open a GitHub Issue → [SIGNAL] Your pain in one sentence
+     ↓
+Include: community evidence (links + upvotes) + gap verification
+     ↓
+Maintainer reviews → labels signal-approved
+     ↓
+You add it to SIGNALS.md + IDEAS.md
+     ↓
+Claim it with track.py → build it
+```
+
+Signals without community evidence are not added. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the full process.
 
 ---
 
-## Run the intelligence pipeline locally
+## Repo map
 
-```bash
-pip install -r requirements.txt
-python3 run_intelligence.py
-```
-
-Results saved to `intelligence_report.json`. Pass `--top 5` to limit output, `--save` to write JSON.
-
----
-
-## Repo structure
+<details>
+<summary>Expand</summary>
 
 ```
 artha/
-├── SIGNALS.md               ← documented pain points with evidence
-├── IDEAS.md                 ← open contribution endpoints
+├── SIGNALS.md               ← 7 documented pain points with evidence
+├── IDEAS.md                 ← open, claimable contribution endpoints
 ├── CONTRIBUTING.md          ← how to build here
 ├── CONTRIBUTORS.md          ← everyone who shipped something
-├── SPRINTS.md               ← sprint log
-├── track.py                 ← signal lifecycle CLI
+├── SPRINTS.md               ← sprint log — what was built and why
+├── track.py                 ← signal lifecycle CLI (claim · build · deploy · expire)
 ├── run_intelligence.py      ← standalone intelligence pipeline runner
 ├── deploy_spaces.py         ← HuggingFace Spaces deployment script
 ├── digest/
@@ -152,8 +145,9 @@ artha/
 │   ├── clustering.py        ← HDBSCAN + TF-IDF cluster labels
 │   ├── scoring.py           ← quote ranking, workaround extraction
 │   └── report.py            ← evidence pack generator
-├── .github/workflows/
-│   └── digest.yml           ← scheduled signal scan (every 2 days, 06:00 UTC)
+├── .github/
+│   ├── workflows/digest.yml ← scheduled signal scan (every 2 days, 06:00 UTC)
+│   └── ISSUE_TEMPLATE/      ← signal · idea · bug templates
 ├── storage/                 ← SQLite + SQLAlchemy, source-aware schema
 ├── api/main.py              ← FastAPI backend
 ├── ui/app.py                ← Streamlit evidence pack viewer
@@ -161,13 +155,32 @@ artha/
 │   ├── pain_signals.csv     ← live signal log, updates every 2 days
 │   └── signal_tracker.csv   ← solution lifecycle tracker
 └── solutions/
-    ├── README.md            ← decision guide: which tool do I need?
+    ├── README.md            ← "which tool do I need?" decision guide
     ├── rag-eval-starter/
     ├── paper-repro-auditor/
     ├── finetune-failure-extractor/
     └── quant-pareto-bench/
 ```
 
+</details>
+
 ---
 
+## Run the intelligence pipeline
+
+```bash
+pip install -r requirements.txt
+python3 run_intelligence.py
+# Options: --top 5  --min-cluster 3  --save
+```
+
+**Communities tracked:**
+`r/LocalLLaMA` · `r/MachineLearning` · `r/LanguageModelHacking` · `r/SideProject` · `r/devtools` · `r/developersIndia` · `r/indianstartups`
+
+---
+
+<div align="center">
+
 *Built by [@SidharthKriplani](https://github.com/SidharthKriplani) · Contributions welcome — see [IDEAS.md](IDEAS.md)*
+
+</div>

@@ -102,19 +102,40 @@ Once merged, you appear in [CONTRIBUTORS.md](CONTRIBUTORS.md) with your name, wh
 
 ---
 
-## How to add a signal
+## How to propose a new signal
 
-If you've hit a pain point that isn't in [SIGNALS.md](SIGNALS.md):
+If you've hit a pain point that isn't in [SIGNALS.md](SIGNALS.md), the process has a mandatory approval gate before anything gets built.
 
-1. Open an issue titled: `[SIGNAL] Your pain in one sentence`
-2. In the body, describe:
-   - What you were trying to do
-   - What broke or was missing
-   - What you tried (workarounds, existing tools)
-   - Links to Reddit / HN / GitHub issues where others describe the same thing
-3. If the signal is real, specific, and has evidence — it gets added
+**Step 1 — Open a GitHub Issue**
 
-**Signals without community evidence don't get added.** This is not about ideas. It is about documented problems.
+Title: `[SIGNAL] Your pain in one sentence`
+
+Use the signal issue template. Required fields:
+- The pain in one sentence
+- At least one community link (Reddit thread, HN post, GitHub issue) with engagement numbers (upvotes, comments)
+- What you tried — existing tools and why they fell short
+- A gap verification: search for 10 minutes. Does a fully-solving, zero-friction tool already exist? If yes, document it and close the issue. That's also a contribution.
+
+**Step 2 — Maintainer review**
+
+The issue stays open while evidence is assessed. If the signal is real, specific, and has community backing, it gets labeled `signal-approved`. If the gap is already closed, it gets labeled `superseded` with a note.
+
+This step exists to prevent signals from being added and built before the gap is verified.
+
+**Step 3 — Add to SIGNALS.md and IDEAS.md**
+
+Once `signal-approved`, the proposer (or maintainer) adds the signal to SIGNALS.md with the required format including gap verification section, and adds a scoped idea to IDEAS.md.
+
+**Step 4 — Claim and build**
+
+Now the normal flow applies:
+```bash
+python3 track.py --claim SIGNAL-XXX --github your-username
+```
+
+**Why this gate exists:** Without it, contributors build things that already have good solutions, or chase ideas without real community evidence. The approval step keeps the signal quality high, which keeps the tool quality high.
+
+**Signals without community evidence are not added.** This is not about ideas. It is about documented problems.
 
 ---
 
