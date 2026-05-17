@@ -43,12 +43,12 @@ Two signals have been superseded on this basis. See [SIGNALS.md](SIGNALS.md).
 
 ## Solutions
 
-| Solution | Signal | Builder | What it does | Source | Live |
-|---|---|---|---|---|---|
-| [rag-eval-starter](solutions/rag-eval-starter/) | [SIGNAL-001](SIGNALS.md#-signal-001--rag-evaluation-expensive-models-underperform-cheaper-ones) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Compare RAG configs across OpenAI, Anthropic, Gemini, Groq | [Thread ↗](https://www.reddit.com/r/LocalLLaMA/comments/1hjsgce/) · ⭐3 | [Try it →](https://huggingface.co/spaces/SidharthKriplani/rag-eval-starter) |
-| [paper-repro-auditor](solutions/paper-repro-auditor/) | [SIGNAL-002](SIGNALS.md#-signal-002--ml-paper-reproduction-stuck-below-reported-accuracy) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Paper config vs your config → ranked reproduction risk factors | [Thread ↗](https://www.reddit.com/r/MachineLearning/comments/1ak9hgz/) · ⭐3 | [Try it →](https://huggingface.co/spaces/sidharthkriplani/paper-repro-auditor) |
-| [finetune-failure-extractor](solutions/finetune-failure-extractor/) | [SIGNAL-005](SIGNALS.md#-signal-005--fine-tuning-feedback-loop-has-no-standard-tooling) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Upload eval output → ranked failure modes + training priority list | [Thread ↗](https://www.reddit.com/r/LocalLLaMA/comments/1f8b9jz/) · ⭐3 | [Try it →](https://huggingface.co/spaces/sidharthkriplani/finetune-failure-extractor) |
-| [quant-pareto-bench](solutions/quant-pareto-bench/) | [SIGNAL-004](SIGNALS.md#-signal-004--quantization-accuracy-vs-latency-tradeoffs-are-invisible) | [@SidharthKriplani](https://github.com/SidharthKriplani) | GGUF files + prompts → accuracy vs latency Pareto frontier | [Thread ↗](https://www.reddit.com/r/LocalLLaMA/comments/1f1g1q4/) · ⭐3 | CLI |
+| Solution | Signal | Builder | What it does | Live |
+|---|---|---|---|---|
+| [rag-eval-starter](solutions/rag-eval-starter/) | [SIGNAL-001](SIGNALS.md#-signal-001--rag-evaluation-expensive-models-underperform-cheaper-ones) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Compare RAG configs across OpenAI, Anthropic, Gemini, Groq | [Try it →](https://huggingface.co/spaces/SidharthKriplani/rag-eval-starter) |
+| [paper-repro-auditor](solutions/paper-repro-auditor/) | [SIGNAL-002](SIGNALS.md#-signal-002--ml-paper-reproduction-stuck-below-reported-accuracy) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Paper config vs your config → ranked reproduction risk factors | [Try it →](https://huggingface.co/spaces/sidharthkriplani/paper-repro-auditor) |
+| [finetune-failure-extractor](solutions/finetune-failure-extractor/) | [SIGNAL-005](SIGNALS.md#-signal-005--fine-tuning-feedback-loop-has-no-standard-tooling) | [@SidharthKriplani](https://github.com/SidharthKriplani) | Upload eval output → ranked failure modes + training priority list | [Try it →](https://huggingface.co/spaces/sidharthkriplani/finetune-failure-extractor) |
+| [quant-pareto-bench](solutions/quant-pareto-bench/) | [SIGNAL-004](SIGNALS.md#-signal-004--quantization-accuracy-vs-latency-tradeoffs-are-invisible) | [@SidharthKriplani](https://github.com/SidharthKriplani) | GGUF files + prompts → accuracy vs latency Pareto frontier | CLI |
 
 → [Open ideas waiting to be claimed](IDEAS.md)
 
