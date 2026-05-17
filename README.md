@@ -2,10 +2,9 @@
 
 # ARTHA
 
-**Evidence-backed open-source build engine for AI/ML builders.**
+**Open-source signal intelligence for AI/ML builders.**
 
 *The system finds the problems. The community builds the tools.*
-*The tools build credibility for everyone involved.*
 
 ---
 

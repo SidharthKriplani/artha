@@ -112,7 +112,7 @@
 
   <!-- Feedback loop arrow -->
   <path d="M982 377 Q982 420 550 420 Q120 420 115 200" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-back)"/>
-  <text x="550" y="437" text-anchor="middle" fill="#6366f1" font-size="9" font-weight="600">credibility attracts contributors → better signals surface → loop compounds</text>
+  <text x="550" y="437" text-anchor="middle" fill="#6366f1" font-size="9" font-weight="600">deployed tools attract contributors → better signals surface → loop compounds</text>
 
   <!-- ═══ STATS BAR ═══ -->
   <rect x="24" y="455" width="1052" height="34" rx="8" fill="#111827" stroke="#1f2937" stroke-width="1"/>
