@@ -17,15 +17,37 @@ import requests
 # ── Configuration ─────────────────────────────────────────────────────────────
 
 SUBREDDITS = [
-    # Global AI/ML builder communities
-    "LocalLLaMA",
-    "MachineLearning",
-    "LanguageModelHacking",
-    "SideProject",
-    "devtools",
-    # Indian tech / startup communities
-    "developersIndia",
-    "indianstartups",
+    # ── Core AI/ML builder (original) ─────────────────────────────────────────
+    "LocalLLaMA",               # 500K  — local model runners, tooling pain
+    "MachineLearning",          # 3M    — research + practitioner overlap
+    "LanguageModelHacking",     # 50K   — LLM builder frustrations
+    "SideProject",              # 300K  — builders sharing what they made
+    "devtools",                 # 100K  — developer tooling gaps
+    # ── LLM / Agent tooling ───────────────────────────────────────────────────
+    "LLMDevs",                  # 100K  — LLM developers, direct target
+    "ollama",                   # 150K  — local inference, deployment pain
+    "LangChain",                # 80K   — agent/chain builders, friction signals
+    "ChatGPTCoding",            # 200K  — AI-assisted coding pain
+    "OpenAI",                   # 1M    — API users, rate limits, eval pain
+    "ClaudeAI",                 # 100K  — Claude API users, tooling gaps
+    "HuggingFace",              # 100K  — model deployment, integration pain
+    # ── MLOps / Data Engineering ──────────────────────────────────────────────
+    "mlops",                    # 80K   — production ML pain, highest signal density
+    "DataEngineering",          # 400K  — pipeline pain, tooling gaps
+    "datascience",              # 3M    — high volume, filter-dependent
+    "deeplearning",             # 200K  — training, inference frustrations
+    "learnmachinelearning",     # 400K  — learner gap signals, tooling confusion
+    # ── Engineering / Dev ─────────────────────────────────────────────────────
+    "Python",                   # 1.5M  — library gaps, integration pain
+    "softwareengineering",      # 300K  — tooling opinions, workflow pain
+    "devops",                   # 300K  — deployment, observability pain
+    # ── Product / Startup ─────────────────────────────────────────────────────
+    "startups",                 # 1.2M  — early-stage tooling needs
+    "ProductManagement",        # 300K  — PM pain with AI tools
+    # ── Indian tech / startup ─────────────────────────────────────────────────
+    "developersIndia",          # 200K  — dev income, freelance, jobs
+    "indianstartups",           # 300K  — founder stories, raises
+    "bangalore",                # 250K  — tech hub, AI builder cluster
 ]
 
 PAIN_KEYWORDS = [
