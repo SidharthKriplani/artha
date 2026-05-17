@@ -1,5 +1,5 @@
 <svg viewBox="0 0 1100 500" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" role="img">
-  <title>ARTHA Signal Intelligence Pipeline</title>
+  <title>artha-ai.sig Signal Intelligence Pipeline</title>
   <defs>
     <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
       <path d="M0,0 L0,7 L9,3.5 z" fill="#4b5563"/>
@@ -17,7 +17,7 @@
   <rect x="1" y="1" width="1098" height="498" fill="none" stroke="#1f2937" stroke-width="1" rx="13"/>
 
   <!-- Title -->
-  <text x="550" y="34" text-anchor="middle" fill="#6b7280" font-size="10.5" font-weight="700" letter-spacing="3.5">ARTHA — SIGNAL INTELLIGENCE PIPELINE</text>
+  <text x="550" y="34" text-anchor="middle" fill="#6b7280" font-size="10.5" font-weight="700" letter-spacing="3.5">artha-ai.sig — SIGNAL INTELLIGENCE PIPELINE</text>
 
   <!-- ═══ TOP ROW BOXES ═══ -->
 

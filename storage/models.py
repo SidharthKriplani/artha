@@ -1,5 +1,5 @@
 """
-ARTHA — Storage Models
+artha-ai.sig — Storage Models
 Source-aware schema. Designed to accept Reddit, HN, GitHub, and other sources
 without schema changes.
 """

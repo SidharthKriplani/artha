@@ -1,5 +1,5 @@
 """
-ARTHA Signal Tracker
+artha-ai.sig Signal Tracker
 Append-only lifecycle manager for pain signals.
 
 Usage:
@@ -250,7 +250,7 @@ def cmd_add(args):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="ARTHA Signal Tracker")
+    parser = argparse.ArgumentParser(description="artha-ai.sig Signal Tracker")
     parser.add_argument("--list",   action="store_true", help="List all signals")
     parser.add_argument("--claim",  metavar="SIGNAL_REF", help="Claim a signal")
     parser.add_argument("--github", metavar="USERNAME",   help="Your GitHub username (for --claim)")

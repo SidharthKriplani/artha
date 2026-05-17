@@ -1,5 +1,5 @@
 """
-ARTHA — Database connection and helpers
+artha-ai.sig — Database connection and helpers
 """
 
 import os

@@ -1,6 +1,6 @@
 # Contributors
 
-Every person who shipped something for ARTHA is listed here — permanently.
+Every person who shipped something for artha-ai.sig is listed here — permanently.
 Name, what they built, and which signal it traces to.
 
 ---

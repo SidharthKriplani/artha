@@ -145,7 +145,7 @@ input,prediction,reference,error_note
 ```
 `error_note` is optional but dramatically improves classification accuracy.
 
-Built for [ARTHA](https://github.com/SidharthKriplani/artha) · [SIGNAL-005](https://github.com/SidharthKriplani/artha/blob/main/SIGNALS.md)
+Built for [artha-ai.sig](https://github.com/SidharthKriplani/artha) · [SIGNAL-005](https://github.com/SidharthKriplani/artha/blob/main/SIGNALS.md)
     """)
 
 if __name__ == "__main__":

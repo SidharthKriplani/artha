@@ -1,10 +1,10 @@
 """
-ARTHA — Evidence Pack Generator
+artha-ai.sig — Evidence Pack Generator
 Converts a cluster of posts into a structured evidence pack.
 Output is a dict ready to display in UI or export as JSON.
 
 Design principle: present evidence, never render verdicts.
-The founder reads the evidence and decides. ARTHA does not say "build this."
+The founder reads the evidence and decides. artha-ai.sig does not say "build this."
 """
 
 import uuid

@@ -1,6 +1,6 @@
 # finetune-failure-extractor
 
-**ARTHA solution for [SIGNAL-005](../../SIGNALS.md#signal-005)**
+**artha-ai.sig solution for [SIGNAL-005](../../SIGNALS.md#signal-005)**
 
 Run eval on your fine-tuned model. Feed the output here. Get a ranked failure mode manifest — most frequent failure types first, with examples — ready to drive your next training data selection.
 

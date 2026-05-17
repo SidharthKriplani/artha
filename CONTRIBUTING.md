@@ -1,6 +1,6 @@
-# Contributing to ARTHA
+# Contributing to artha-ai.sig
 
-ARTHA is an open-source signal intelligence system built on a simple principle:
+artha-ai.sig is an open-source signal intelligence system built on a simple principle:
 **every tool here traces back to a real developer pain point with real evidence.**
 
 This is not a repo where you add features because they sound useful.
@@ -26,7 +26,7 @@ If that resonates with you, read on.
 
 Most open source contributions fail because the contributor doesn't know whether what they're building matters.
 
-ARTHA solves this differently. Every open idea in [IDEAS.md](IDEAS.md) links to a documented signal — a real community thread with real upvotes and real discussion. Before you write a line of code, you can verify for yourself that the problem is real.
+artha-ai.sig solves this differently. Every open idea in [IDEAS.md](IDEAS.md) links to a documented signal — a real community thread with real upvotes and real discussion. Before you write a line of code, you can verify for yourself that the problem is real.
 
 **The optimization objective — read this before proposing anything:**
 

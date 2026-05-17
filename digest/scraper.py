@@ -1,5 +1,5 @@
 """
-ARTHA v0 — Reddit Pain Point Digest
+artha-ai.sig v0 — Reddit Pain Point Digest
 Scrapes public subreddits for AI/ML builder pain signals.
 No API key required. Uses Reddit's public JSON endpoint.
 """
@@ -139,7 +139,7 @@ def run(no_push: bool = False):
     new_rows = []
 
     print(f"\n{'='*55}")
-    print(f"  ARTHA v0 — Pain Signal Digest")
+    print(f"  artha-ai.sig v0 — Pain Signal Digest")
     print(f"  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"{'='*55}\n")
 

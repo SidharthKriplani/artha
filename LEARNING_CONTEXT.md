@@ -1,4 +1,4 @@
-# ARTHA — Full Build Context for Learning
+# artha-ai.sig — Full Build Context for Learning
 
 ## How to use this document
 
@@ -20,9 +20,9 @@ applied AI roles. I run a tech community called DAI with 1,200+ members.
 
 ---
 
-## What ARTHA is
+## What artha-ai.sig is
 
-ARTHA is an open-source signal intelligence system that:
+artha-ai.sig is an open-source signal intelligence system that:
 1. Scrapes AI/ML developer communities on Reddit for recurring pain points
 2. Scores each signal by frequency, engagement, and keyword specificity
 3. Runs an intelligence pipeline (embeddings + clustering + evidence packs) 
@@ -52,7 +52,7 @@ with evidence — not intuition.
 
 ---
 
-## What was built: ARTHA v0 (digest scraper)
+## What was built: artha-ai.sig v0 (digest scraper)
 
 File: digest/scraper.py
 
@@ -77,7 +77,7 @@ for a batch digest running every 2 days.
 
 ---
 
-## What was built: ARTHA v1 (intelligence pipeline)
+## What was built: artha-ai.sig v1 (intelligence pipeline)
 
 ### storage/models.py + storage/database.py
 SQLite database with SQLAlchemy. Source-aware schema — every post has a 
@@ -128,7 +128,7 @@ Converts a cluster of posts into an Evidence Pack — a structured dict with:
 - Detected persona (rule-based: indie builder / ml engineer / researcher etc)
 - Reachable communities (where to find these people)
 
-Key design principle: ARTHA presents evidence, never renders verdicts. 
+Key design principle: artha-ai.sig presents evidence, never renders verdicts. 
 The output says "here is what people are struggling with and what they have 
 tried." It does not say "build this startup" or "this is a good opportunity." 
 That judgment belongs to the human reading it.
@@ -153,7 +153,7 @@ Every solution must clear one bar:
 
 **Does a fully-solving, zero-friction version of this exist for AI/ML builders?**
 
-Not "does something like this exist" — something always exists. The question is whether existing solutions require accounts, complex setup, or solve a slightly different problem. This bar is what differentiates ARTHA from a curated list or ideas repo.
+Not "does something like this exist" — something always exists. The question is whether existing solutions require accounts, complex setup, or solve a slightly different problem. This bar is what differentiates artha-ai.sig from a curated list or ideas repo.
 
 Gap verification is mandatory before any signal is listed as `open`. Enforced at three layers:
 1. `track.py --claim` checks SIGNALS.md for a "Gap verification" section — exits with error if missing
@@ -170,7 +170,7 @@ Two signals were superseded on this basis (2026-05-17):
 
 Located at: solutions/rag-eval-starter/
 
-This is the first solution built from an ARTHA pain signal.
+This is the first solution built from an artha-ai.sig pain signal.
 
 Signal source: r/LocalLLaMA post — "Evaluated a RAG chatbot and the most 
 expensive model was the worst performer. Notes on what actually moved the 

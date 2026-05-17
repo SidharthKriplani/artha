@@ -1,5 +1,5 @@
 """
-ARTHA — Embeddings Pipeline
+artha-ai.sig — Embeddings Pipeline
 Converts post text into dense vectors using sentence-transformers.
 Embeddings are cached to disk to avoid recomputing on repeat runs.
 """

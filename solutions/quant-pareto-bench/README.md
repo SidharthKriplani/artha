@@ -1,6 +1,6 @@
 # quant-pareto-bench
 
-**ARTHA solution for [SIGNAL-004](../../SIGNALS.md#signal-004)**
+**artha-ai.sig solution for [SIGNAL-004](../../SIGNALS.md#signal-004)**
 
 Benchmark multiple GGUF quantization levels of the same model on **your prompts**. Get tokens/sec, latency, accuracy scores, and a Pareto frontier showing exactly which quantization levels are worth keeping.
 

@@ -31,4 +31,4 @@ input,prediction,reference,error_note
 
 **Zero dependencies.** Zero setup. Pure Python.
 
-Built for [ARTHA](https://github.com/SidharthKriplani/artha) — open-source tools built from real developer pain signals.
+Built for [artha-ai.sig](https://github.com/SidharthKriplani/artha) — open-source tools built from real developer pain signals.

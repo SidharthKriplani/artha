@@ -129,7 +129,7 @@ with gr.Blocks(title="RAG Eval Starter", theme=gr.themes.Soft()) as demo:
     Test any combination — one model, one provider, or mix OpenAI vs Claude vs Gemini vs Groq.
     Enter only the API keys for providers you want to test.
 
-    *Built from a real r/LocalLLaMA signal · Part of [ARTHA](https://github.com/SidharthKriplani/artha)*
+    *Built from a real r/LocalLLaMA signal · Part of [artha-ai.sig](https://github.com/SidharthKriplani/artha)*
     """)
 
     with gr.Row():

@@ -1,6 +1,6 @@
 <div align="center">
 
-# ARTHA
+# artha-ai.sig
 
 **Open-source signal intelligence for AI/ML builders.**
 
@@ -26,7 +26,7 @@ Every solution here traces back to a specific Reddit thread with real upvotes an
 
 ## How it works
 
-![ARTHA Pipeline](docs/pipeline.svg)
+![artha-ai.sig Pipeline](docs/pipeline.svg)
 
 ---
 

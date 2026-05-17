@@ -113,7 +113,7 @@ with gr.Blocks(title="Paper Reproduction Gap Auditor", theme=gr.themes.Soft()) a
 
     gr.Markdown("""
 ---
-Built for [ARTHA](https://github.com/SidharthKriplani/artha) · [SIGNAL-002](https://github.com/SidharthKriplani/artha/blob/main/SIGNALS.md)
+Built for [artha-ai.sig](https://github.com/SidharthKriplani/artha) · [SIGNAL-002](https://github.com/SidharthKriplani/artha/blob/main/SIGNALS.md)
     """)
 
 if __name__ == "__main__":

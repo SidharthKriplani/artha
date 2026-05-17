@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ARTHA — Standalone Intelligence Runner
+artha-ai.sig — Standalone Intelligence Runner
 Reads pain_signals.csv directly. No database required.
 Runs: embeddings → clustering → evidence packs → ranked signal report.
 
@@ -155,7 +155,7 @@ def print_report(packs: list[dict], top: int) -> None:
     BOLD = "\033[1m"; RESET = "\033[0m"; GREEN = "\033[92m"; YEL = "\033[93m"
 
     print(f"\n{BOLD}{'='*70}{RESET}")
-    print(f"{BOLD}  ARTHA INTELLIGENCE REPORT — top {min(top, len(packs))} clusters{RESET}")
+    print(f"{BOLD}  artha-ai.sig INTELLIGENCE REPORT — top {min(top, len(packs))} clusters{RESET}")
     print(f"  Total clusters found: {len(packs)}")
     print(f"{BOLD}{'='*70}{RESET}\n")
 
@@ -185,7 +185,7 @@ def print_report(packs: list[dict], top: int) -> None:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run ARTHA intelligence pipeline on pain_signals.csv")
+    parser = argparse.ArgumentParser(description="Run artha-ai.sig intelligence pipeline on pain_signals.csv")
     parser.add_argument("--min-cluster", type=int, default=4, help="Min posts per cluster (default: 4)")
     parser.add_argument("--top", type=int, default=10, help="Top N clusters to show (default: 10)")
     parser.add_argument("--save", metavar="FILE", help="Save full report as JSON")

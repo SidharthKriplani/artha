@@ -1,6 +1,6 @@
 # paper-repro-auditor
 
-**ARTHA solution for [SIGNAL-002](../../SIGNALS.md#signal-002)**
+**artha-ai.sig solution for [SIGNAL-002](../../SIGNALS.md#signal-002)**
 
 Paste the paper's reported config and your config. Get a ranked list of reproduction risk factors — sorted by how likely each gap is to explain missing accuracy.
 

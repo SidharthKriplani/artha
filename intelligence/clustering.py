@@ -1,5 +1,5 @@
 """
-ARTHA — Clustering Module
+artha-ai.sig — Clustering Module
 HDBSCAN over post embeddings + TF-IDF cluster label generation.
 
 Why HDBSCAN over K-means:

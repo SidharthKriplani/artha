@@ -1,5 +1,5 @@
 """
-ARTHA — Scoring Module
+artha-ai.sig — Scoring Module
 Quote quality ranking, workaround extraction, tool rejection detection,
 persona inference, and cluster-level signal metrics.
 """

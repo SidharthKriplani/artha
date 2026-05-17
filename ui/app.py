@@ -1,5 +1,5 @@
 """
-ARTHA — Streamlit UI
+artha-ai.sig — Streamlit UI
 Evidence pack viewer for AI/ML builder pain signals.
 Run: streamlit run ui/app.py
 """
@@ -22,7 +22,7 @@ REPORT_DIR = Path(__file__).parent.parent / "data" / "reports"
 CSV_PATH   = Path(__file__).parent.parent / "data" / "pain_signals.csv"
 
 st.set_page_config(
-    page_title="ARTHA — Pain Signal Intelligence",
+    page_title="artha-ai.sig — Pain Signal Intelligence",
     page_icon="🔍",
     layout="wide"
 )
@@ -46,7 +46,7 @@ st.markdown("""
 
 # ── Header ────────────────────────────────────────────────────────────────────
 
-st.title("🔍 ARTHA")
+st.title("🔍 artha-ai.sig")
 st.caption("AI/ML Builder Pain Signal Intelligence · Evidence-based, not inspiration-based")
 st.divider()
 

@@ -1,6 +1,6 @@
 # SIGNALS — Open Pain Points
 
-This document lists the highest-signal developer pain points captured by ARTHA's digest.
+This document lists the highest-signal developer pain points captured by artha-ai.sig's digest.
 Every entry traces back to a real community thread with real upvotes and real discussion.
 
 These are not ideas. They are documented problems waiting for tools.

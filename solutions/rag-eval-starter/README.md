@@ -91,7 +91,7 @@ Built from a real community signal on r/LocalLLaMA:
 > *"Evaluated a RAG chatbot and the most expensive model was the worst performer. Notes on what actually moved the needle."*
 > 22 upvotes · 27 comments
 
-Part of the [ARTHA](https://github.com/SidharthKriplani/artha) open-source signal initiative —
+Part of the [artha-ai.sig](https://github.com/SidharthKriplani/artha) open-source signal initiative —
 every solution here traces back to a real, verified developer pain point.
 
 ---

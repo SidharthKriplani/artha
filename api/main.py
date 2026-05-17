@@ -1,5 +1,5 @@
 """
-ARTHA — FastAPI Backend
+artha-ai.sig — FastAPI Backend
 Endpoints for running scans, retrieving reports, listing communities.
 """
 
@@ -21,7 +21,7 @@ from intelligence.clustering import cluster_posts
 from intelligence.report import build_scan_report
 
 app = FastAPI(
-    title="ARTHA",
+    title="artha-ai.sig",
     description="AI/ML Builder Pain Signal Intelligence",
     version="1.0.0"
 )
